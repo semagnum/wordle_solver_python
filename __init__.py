@@ -30,4 +30,4 @@ if __name__ == '__main__':
 
         wordle_dictionary = parse_guess(wordle_dictionary, guess)
 
-        print(f"{len(wordle_dictionary)} words remaining: {', '.join(wordle_dictionary[:])}...")
+        print(f"{len(wordle_dictionary)} words remaining: {', '.join(wordle_dictionary[:15])}...")
