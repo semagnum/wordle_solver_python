@@ -4,7 +4,7 @@ FREQUENCY = list('eariotnslcudpmhgbfywkvxzjq')
 """Letters sorted in most popular letters. Helps sort potential words by the most popular letters.
 By using and potentially eliminating popular letters, more words can be filtered."""
 
-WORD_SIZE = 7
+WORD_SIZE = 5
 """Word size for Wordle puzzle."""
 
 
