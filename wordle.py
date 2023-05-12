@@ -12,9 +12,9 @@ def initialize_dictionary(filename: str, word_size: int) -> list:
         with open(filename, 'rt') as file:
             lines = file.read().split('\n')
 
-            return list(set(line
-                            for line in lines
-                            if len(line) == word_size))
+            return list(dict.fromkeys(line
+                                      for line in lines
+                                      if len(line) == word_size))
     except (OSError, IOError) as e:
         print(f'File error: {e}')
         return []
