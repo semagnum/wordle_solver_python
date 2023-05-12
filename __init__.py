@@ -3,17 +3,17 @@ from wordle import parse_guess, initialize_dictionary
 
 if __name__ == '__main__':
     wordle_dictionary = initialize_dictionary('dictionary.txt', WORD_SIZE)
-    print(f"{len(wordle_dictionary)} words added to dictionary.")
+    print(f'{len(wordle_dictionary)} words added to dictionary.')
 
     print('Sorting...', end='')
     wordle_dictionary.sort(key=lambda word: min(FREQUENCY.index(letter) for letter in word))
     print('done')
 
-    print("Welcome to Wordle Helper!")
+    print('Welcome to Wordle Helper!')
 
     while True:
         if len(wordle_dictionary) == 0:
-            print("No possible words available.")
+            print('No possible words available.')
             break
 
         guess = ''
@@ -23,7 +23,7 @@ if __name__ == '__main__':
         finish_resp = input('Did you answer correctly? (y/N) ')
 
         if finish_resp.strip()[0].lower() == 'y':
-            print("Yay, good job! We did it.")
+            print('Yay, good job! We did it.')
             break
 
         print()
