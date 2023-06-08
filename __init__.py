@@ -11,7 +11,9 @@ if __name__ == '__main__':
 
     print('Welcome to Wordle Helper!')
 
+    tries = 0
     while True:
+        tries += 1
         if len(wordle_dictionary) == 0:
             print('No possible words available.')
             break
@@ -23,7 +25,7 @@ if __name__ == '__main__':
         finish_resp = input('Did you answer correctly? (y/N) ')
 
         if finish_resp.strip()[0].lower() == 'y':
-            print('Yay, good job! We did it.')
+            print(f'Yay, good job! We did it in {"1 try." if tries == 1 else (str(tries) + " tries.")}')
             break
 
         print()
