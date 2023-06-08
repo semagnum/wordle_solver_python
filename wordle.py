@@ -77,6 +77,17 @@ def parse_guess(dictionary: list[str], guess: str):
     wrong_positions = correctness_to_letter_to_count[Correctness.WRONG_POSITION]
     wrong_letters = correctness_to_letter_to_count[Correctness.WRONG_LETTER]
 
+    for letter in list(correct_positions):
+        count = wrong_positions.get(letter, 0) + correct_positions.get(letter, 0)
+
+        plural_letter = f'{count} \"{letter}\"' + ('s' if count > 1 else '')
+        # if there is at least one of that letter in count and 0 instances of it in wrong_letter,
+        # then at least `n` of that letter is in the true word
+        if letter in wrong_letters:
+            # remove all words in dictionary with the incorrect count `n` of that letter
+            print(f'\t- has exactly {plural_letter}...')
+            dictionary = [word for word in dictionary if word.count(letter) == count]
+
     for letter in list(wrong_letters):
         # if this letter is not in wrong_position, then it must not be in the true word at all!
         if letter not in wrong_positions and letter not in correct_positions:
