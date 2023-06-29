@@ -42,7 +42,10 @@ def prompt_correctness(guess: str) -> tuple[dict, tuple]:
             print(f'\t{Correctness.WRONG_POSITION}. Correct letter, incorrect position')
             print(f'\t{Correctness.WRONG_LETTER}. Incorrect letter')
 
-            num_response = int(input(''))
+            try:
+                num_response = int(input(''))
+            except ValueError:
+                print('Not a valid number')
 
         correctness_response = Correctness(num_response)
         is_correct[idx] = (True if num_response == Correctness.CORRECT else False)
