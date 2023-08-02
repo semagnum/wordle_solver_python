@@ -18,6 +18,7 @@ if __name__ == '__main__':
             print('No possible words available.')
             break
 
+        print(f"{len(wordle_dictionary)} words remaining: {', '.join(wordle_dictionary[:15])}...")
         guess = ''
         while len(guess) != WORD_SIZE:
             guess = input('Enter your guess: ')
@@ -31,5 +32,3 @@ if __name__ == '__main__':
         print()
 
         wordle_dictionary = parse_guess(wordle_dictionary, guess)
-
-        print(f"{len(wordle_dictionary)} words remaining: {', '.join(wordle_dictionary[:15])}...")
